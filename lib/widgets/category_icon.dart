@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:supplier_app/enums/menu_style.dart';
 import '../design/design_system.dart';
 
 /// Reusable category icon widget for displaying product categories
