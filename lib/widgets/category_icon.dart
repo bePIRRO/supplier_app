@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:supplier_app/enums/menu_style.dart';
 import '../design/design_system.dart';
 
 /// Reusable category icon widget for displaying product categories
@@ -232,7 +231,15 @@ class CategoryIconData {
     required this.label,
     required this.icon,
     this.color,
+    required String description,
+    required int productCount,
   });
+
+  get description => null;
+
+  bool? get isActive => null;
+
+  get productCount => null;
 }
 
 /// Predefined category data for common food categories
@@ -243,36 +250,48 @@ class FoodCategories {
       label: 'Meat',
       icon: Icons.restaurant_outlined,
       color: AppColors.categoryMeat,
+      description: '',
+      productCount: 0,
     ),
     CategoryIconData(
       id: 'vegetables',
       label: 'Vegetables',
       icon: Icons.eco_outlined,
       color: AppColors.categoryVegetables,
+      description: '',
+      productCount: 0,
     ),
     CategoryIconData(
       id: 'seafood',
       label: 'Seafood',
       icon: Icons.waves_outlined,
       color: AppColors.categorySeafood,
+      description: '',
+      productCount: 0,
     ),
     CategoryIconData(
       id: 'dairy',
       label: 'Dairy',
       icon: Icons.local_drink_outlined,
       color: AppColors.textSecondary,
+      description: '',
+      productCount: 0,
     ),
     CategoryIconData(
       id: 'fruits',
       label: 'Fruits',
       icon: Icons.apple_outlined,
       color: AppColors.primary,
+      description: '',
+      productCount: 0,
     ),
     CategoryIconData(
       id: 'grains',
       label: 'Grains',
       icon: Icons.grain_outlined,
       color: AppColors.secondary,
+      description: '',
+      productCount: 0,
     ),
   ];
 
@@ -282,18 +301,24 @@ class FoodCategories {
       label: 'Meat',
       icon: Icons.restaurant_outlined,
       color: AppColors.categoryMeat,
+      description: '',
+      productCount: 0,
     ),
     CategoryIconData(
       id: 'vegetables',
       label: 'Vegetables',
       icon: Icons.eco_outlined,
       color: AppColors.categoryVegetables,
+      description: '',
+      productCount: 0,
     ),
     CategoryIconData(
       id: 'seafood',
       label: 'Seafood',
       icon: Icons.waves_outlined,
       color: AppColors.categorySeafood,
+      description: '',
+      productCount: 0,
     ),
   ];
 }

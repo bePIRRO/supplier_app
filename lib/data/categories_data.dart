@@ -1,47 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:supplier_app/enums/category_type.dart';
+import 'package:supplier_app/widgets/category_icon.dart';
 import '../design/design_system.dart';
-
-/// Category icon data model
-class CategoryIconData {
-  final String id;
-  final String label;
-  final IconData icon;
-  final Color? color;
-  final String? description;
-  final int? productCount;
-  final bool isActive;
-
-  const CategoryIconData({
-    required this.id,
-    required this.label,
-    required this.icon,
-    this.color,
-    this.description,
-    this.productCount,
-    this.isActive = true,
-  });
-
-  /// Create a copy with modified properties
-  CategoryIconData copyWith({
-    String? id,
-    String? label,
-    IconData? icon,
-    Color? color,
-    String? description,
-    int? productCount,
-    bool? isActive,
-  }) {
-    return CategoryIconData(
-      id: id ?? this.id,
-      label: label ?? this.label,
-      icon: icon ?? this.icon,
-      color: color ?? this.color,
-      description: description ?? this.description,
-      productCount: productCount ?? this.productCount,
-      isActive: isActive ?? this.isActive,
-    );
-  }
-}
 
 /// Mock category data for the Supplier App
 class MockCategories {
@@ -270,17 +230,9 @@ class MockCategories {
   }
 
   /// Get total product count for a category type
-  static int getTotalProductCount(CategoryType type) {
+  static num getTotalProductCount(CategoryType type) {
     return getByType(type)
         .where((category) => category.productCount != null)
         .fold(0, (sum, category) => sum + category.productCount!);
   }
-}
-
-/// Category type enumeration
-enum CategoryType {
-  food, // Main food categories (meat, vegetables, seafood)
-  allFood, // All food categories including dairy, fruits, etc.
-  business, // Business type categories
-  orderStatus, // Order status categories
 }

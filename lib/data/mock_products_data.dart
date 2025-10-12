@@ -1,67 +1,9 @@
-import 'package:flutter/material.dart';
+import 'package:supplier_app/models/order_data.dart';
+
 import '../design/design_system.dart';
+import '../models/product_data.dart';
 
-/// Product data model for the Supplier App
-class ProductData {
-  final String id;
-  final String name;
-  final String? description;
-  final String? imageUrl;
-  final String? price;
-  final Color? backgroundColor;
-  final String? category;
-  final bool isAvailable;
-  final bool isFeatured;
-  final int? stockQuantity;
-  final String? unit; // kg, pieces, liters, etc.
-
-  const ProductData({
-    required this.id,
-    required this.name,
-    this.description,
-    this.imageUrl,
-    this.price,
-    this.backgroundColor,
-    this.category,
-    this.isAvailable = true,
-    this.isFeatured = false,
-    this.stockQuantity,
-    this.unit,
-  });
-
-  /// Create a copy with modified properties
-  ProductData copyWith({
-    String? id,
-    String? name,
-    String? description,
-    String? imageUrl,
-    String? price,
-    Color? backgroundColor,
-    String? category,
-    bool? isAvailable,
-    bool? isFeatured,
-    int? stockQuantity,
-    String? unit,
-  }) {
-    return ProductData(
-      id: id ?? this.id,
-      name: name ?? this.name,
-      description: description ?? this.description,
-      imageUrl: imageUrl ?? this.imageUrl,
-      price: price ?? this.price,
-      backgroundColor: backgroundColor ?? this.backgroundColor,
-      category: category ?? this.category,
-      isAvailable: isAvailable ?? this.isAvailable,
-      isFeatured: isFeatured ?? this.isFeatured,
-      stockQuantity: stockQuantity ?? this.stockQuantity,
-      unit: unit ?? this.unit,
-    );
-  }
-}
-
-/// Mock product data for the Supplier App
 class MockProducts {
-  /// Featured products for the home screen
   static const List<ProductData> featured = [
     ProductData(
       id: 'prod_001',
@@ -284,25 +226,6 @@ class MockProducts {
         .toSet()
         .toList();
   }
-}
-
-/// Sample order data
-class OrderData {
-  final String id;
-  final DateTime date;
-  final List<ProductData> products;
-  final double total;
-  final String status;
-  final String? customerName;
-
-  const OrderData({
-    required this.id,
-    required this.date,
-    required this.products,
-    required this.total,
-    required this.status,
-    this.customerName,
-  });
 }
 
 /// Mock order data
