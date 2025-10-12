@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'design/design_system.dart';
 import 'screens/login_screen.dart';
+import 'screens/home_screen.dart';
 
 void main() {
   runApp(const MainApp());
@@ -14,7 +15,8 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
       title: 'Supplier App',
       theme: AppTheme.lightTheme,
-      home: const LoginScreen(),
+      home: const HomeScreen(), // Changed to HomeScreen to showcase the UI
+      // home: const LoginScreen(), // Use this for login flow
     );
   }
 }
