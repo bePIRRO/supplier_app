@@ -21,12 +21,14 @@ export 'colors.dart';
 export 'spacing.dart';
 export 'typography.dart';
 export 'ui_components.dart';
+export '../widgets/app_loader.dart';
 
 import 'package:flutter/material.dart';
 import 'colors.dart';
 import 'spacing.dart';
 import 'typography.dart';
 import 'ui_components.dart';
+import '../widgets/app_loader.dart';
 
 /// Complete app theme based on the design system
 class AppTheme {
@@ -217,4 +219,7 @@ class DesignSystem {
   static const dividers = AppDividerStyles;
   static const loading = AppLoadingStyles;
   static const categories = AppCategoryStyles;
+
+  // Loaders
+  static const loaders = AppLoaders;
 }

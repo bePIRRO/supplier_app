@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'colors.dart';
 import 'spacing.dart';
 import 'typography.dart';
+import '../widgets/app_loader.dart';
 
 /// UI component styles and themes for the Supplier App
 /// Based on the design mockup components
@@ -298,12 +299,23 @@ class AppDividerStyles {
 
 /// Loading indicator styles
 class AppLoadingStyles {
-  static Widget primaryLoader = const CircularProgressIndicator(
+  // Primary loaders using AppLoader component
+  static const Widget primaryLoader = AppLoader.medium();
+  static const Widget primaryLoaderSmall = AppLoader.small();
+  static const Widget primaryLoaderLarge = AppLoader.large();
+
+  // Button loaders
+  static const Widget buttonLoader = AppLoader.button();
+
+  // Legacy CircularProgressIndicator styles (deprecated - use AppLoader instead)
+  @deprecated
+  static Widget legacyPrimaryLoader = const CircularProgressIndicator(
     valueColor: AlwaysStoppedAnimation<Color>(AppColors.primary),
     strokeWidth: 3,
   );
 
-  static Widget secondaryLoader = const CircularProgressIndicator(
+  @deprecated
+  static Widget legacySecondaryLoader = const CircularProgressIndicator(
     valueColor: AlwaysStoppedAnimation<Color>(AppColors.secondary),
     strokeWidth: 2,
   );
