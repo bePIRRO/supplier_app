@@ -212,7 +212,7 @@ class MockCategories {
         ? getByType(type)
         : allFoodCategories;
 
-    return sourceList.where((category) => category.isActive).toList();
+    return sourceList.where((category) => category.isActive == true).toList();
   }
 
   /// Get categories with products

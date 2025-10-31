@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:supplier_app/data/mock_menu_items.dart';
+import 'package:supplier_app/enums/menu_category.dart';
+import 'package:supplier_app/models/menu_item.dart';
 import '../enums/app_screens.dart';
 
 /// menu data for the Supplier App
@@ -192,7 +193,7 @@ class MenuItems {
     return allItems
         .where(
           (item) =>
-              item.name.toLowerCase().contains(lowercaseQuery) ||
+              item.name!.toLowerCase().contains(lowercaseQuery) ||
               (item.description?.toLowerCase().contains(lowercaseQuery) ??
                   false),
         )
@@ -217,6 +218,6 @@ class MenuItems {
 
   /// Get enabled menu items only
   static List<MenuItem> get enabled {
-    return allItems.where((item) => item.enabled).toList();
+    return allItems.where((item) => item.enabled ?? true).toList();
   }
 }
