@@ -89,10 +89,10 @@ class ProductCard extends StatelessWidget {
               child: ElevatedButton(
                 onPressed: onAddToOrder,
                 style: AppButtonStyles.addToOrderButton.copyWith(
-                  backgroundColor: MaterialStateProperty.all(
+                  backgroundColor: WidgetStateProperty.all(
                     _getButtonColor(cardBackground),
                   ),
-                  foregroundColor: MaterialStateProperty.all(
+                  foregroundColor: WidgetStateProperty.all(
                     _getButtonTextColor(cardBackground),
                   ),
                 ),

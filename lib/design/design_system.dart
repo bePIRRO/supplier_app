@@ -15,6 +15,7 @@
 ///   ),
 /// )
 /// ```
+library;
 
 // Export all design system files
 export 'colors.dart';
@@ -53,7 +54,37 @@ class AppTheme {
     textButtonTheme: TextButtonThemeData(style: AppButtonStyles.textButton),
 
     // Input Decoration Theme
-    inputDecorationTheme: AppInputStyles.primaryInput,
+    inputDecorationTheme: InputDecorationTheme(
+      filled: true,
+      fillColor: AppColors.surface,
+      contentPadding: const EdgeInsets.symmetric(
+        horizontal: AppSpacing.inputPaddingHorizontal,
+        vertical: AppSpacing.inputPaddingVertical,
+      ),
+      border: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(AppRadius.inputRadius),
+        borderSide: const BorderSide(color: AppColors.border),
+      ),
+      enabledBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(AppRadius.inputRadius),
+        borderSide: const BorderSide(color: AppColors.border),
+      ),
+      focusedBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(AppRadius.inputRadius),
+        borderSide: const BorderSide(color: AppColors.borderFocus, width: 2),
+      ),
+      errorBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(AppRadius.inputRadius),
+        borderSide: const BorderSide(color: AppColors.error),
+      ),
+      focusedErrorBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(AppRadius.inputRadius),
+        borderSide: const BorderSide(color: AppColors.error, width: 2),
+      ),
+      hintStyle: AppTypography.inputHint,
+      labelStyle: AppTypography.inputLabel,
+      errorStyle: AppTypography.errorText,
+    ),
 
     // Chip Theme
     chipTheme: AppChipStyles.chipTheme,
@@ -129,14 +160,14 @@ class AppTheme {
 
     // Switch Theme
     switchTheme: SwitchThemeData(
-      thumbColor: MaterialStateProperty.resolveWith((states) {
-        if (states.contains(MaterialState.selected)) {
+      thumbColor: WidgetStateProperty.resolveWith((states) {
+        if (states.contains(WidgetState.selected)) {
           return AppColors.primary;
         }
         return AppColors.grey400;
       }),
-      trackColor: MaterialStateProperty.resolveWith((states) {
-        if (states.contains(MaterialState.selected)) {
+      trackColor: WidgetStateProperty.resolveWith((states) {
+        if (states.contains(WidgetState.selected)) {
           return AppColors.primary.withOpacity(0.3);
         }
         return AppColors.grey300;
@@ -145,13 +176,13 @@ class AppTheme {
 
     // Checkbox Theme
     checkboxTheme: CheckboxThemeData(
-      fillColor: MaterialStateProperty.resolveWith((states) {
-        if (states.contains(MaterialState.selected)) {
+      fillColor: WidgetStateProperty.resolveWith((states) {
+        if (states.contains(WidgetState.selected)) {
           return AppColors.primary;
         }
         return AppColors.grey300;
       }),
-      checkColor: MaterialStateProperty.all(AppColors.white),
+      checkColor: WidgetStateProperty.all(AppColors.white),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(AppRadius.radiusXs),
       ),
@@ -159,8 +190,8 @@ class AppTheme {
 
     // Radio Theme
     radioTheme: RadioThemeData(
-      fillColor: MaterialStateProperty.resolveWith((states) {
-        if (states.contains(MaterialState.selected)) {
+      fillColor: WidgetStateProperty.resolveWith((states) {
+        if (states.contains(WidgetState.selected)) {
           return AppColors.primary;
         }
         return AppColors.grey400;

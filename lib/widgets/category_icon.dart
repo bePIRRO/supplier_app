@@ -40,7 +40,7 @@ class CategoryIcon extends StatelessWidget {
 
     return GestureDetector(
       onTap: onTap,
-      child: Container(
+      child: SizedBox(
         width: containerSize,
         child: Column(
           mainAxisSize: MainAxisSize.min,
@@ -180,7 +180,7 @@ class CategoryIconList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: _getListHeight(),
       child: ListView.separated(
         scrollDirection: Axis.horizontal,

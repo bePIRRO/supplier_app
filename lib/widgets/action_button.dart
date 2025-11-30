@@ -125,13 +125,13 @@ class CompactActionButton extends StatelessWidget {
       child: ElevatedButton(
         onPressed: enabled ? onPressed : null,
         style: _getButtonStyle().copyWith(
-          padding: MaterialStateProperty.all(
+          padding: WidgetStateProperty.all(
             const EdgeInsets.symmetric(
               horizontal: AppSpacing.paddingMd,
               vertical: AppSpacing.paddingSm,
             ),
           ),
-          textStyle: MaterialStateProperty.all(AppTypography.buttonSmall),
+          textStyle: WidgetStateProperty.all(AppTypography.buttonSmall),
         ),
         child: Row(
           mainAxisSize: MainAxisSize.min,
@@ -217,7 +217,7 @@ class ActionButtonList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: AppSizes.buttonHeightMd + (AppSpacing.spaceMd * 2),
       child: ListView.separated(
         scrollDirection: Axis.horizontal,

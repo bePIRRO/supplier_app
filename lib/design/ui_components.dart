@@ -69,28 +69,28 @@ class AppButtonStyles {
 
   // Small button variant
   static ButtonStyle primaryButtonSmall = primaryButton.copyWith(
-    padding: MaterialStateProperty.all(
+    padding: WidgetStateProperty.all(
       const EdgeInsets.symmetric(
         horizontal: AppSpacing.paddingMd,
         vertical: AppSpacing.paddingSm,
       ),
     ),
-    textStyle: MaterialStateProperty.all(AppTypography.buttonSmall),
-    minimumSize: MaterialStateProperty.all(
+    textStyle: WidgetStateProperty.all(AppTypography.buttonSmall),
+    minimumSize: WidgetStateProperty.all(
       const Size(AppSizes.buttonMinWidth, AppSizes.buttonHeightSm),
     ),
   );
 
   // Large button variant
   static ButtonStyle primaryButtonLarge = primaryButton.copyWith(
-    padding: MaterialStateProperty.all(
+    padding: WidgetStateProperty.all(
       const EdgeInsets.symmetric(
         horizontal: AppSpacing.paddingXl,
         vertical: AppSpacing.paddingMd,
       ),
     ),
-    textStyle: MaterialStateProperty.all(AppTypography.buttonLarge),
-    minimumSize: MaterialStateProperty.all(
+    textStyle: WidgetStateProperty.all(AppTypography.buttonLarge),
+    minimumSize: WidgetStateProperty.all(
       const Size(AppSizes.buttonMinWidth, AppSizes.buttonHeightLg),
     ),
   );

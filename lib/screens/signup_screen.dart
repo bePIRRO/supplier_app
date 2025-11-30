@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import '../design/design_system.dart';
-import '../widgets/app_loader.dart';
 
 /// Sign up screen for the Supplier App
 /// Allows new users to create an account with form validation
@@ -323,10 +322,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               _agreeToTerms = value ?? false;
                             });
                           },
-                          fillColor: MaterialStateProperty.resolveWith((
+                          fillColor: WidgetStateProperty.resolveWith((
                             states,
                           ) {
-                            if (states.contains(MaterialState.selected)) {
+                            if (states.contains(WidgetState.selected)) {
                               return AppColors.primary;
                             }
                             return AppColors.grey300;
@@ -388,7 +387,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         TextButton(
                           onPressed: _navigateToLogin,
                           style: AppButtonStyles.textButton.copyWith(
-                            padding: MaterialStateProperty.all(
+                            padding: WidgetStateProperty.all(
                               const EdgeInsets.symmetric(
                                 horizontal: AppSpacing.paddingXs,
                                 vertical: AppSpacing.paddingXs,

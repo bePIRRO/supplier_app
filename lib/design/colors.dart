@@ -76,8 +76,6 @@ class AppColorScheme {
     onSecondary: AppColors.textOnSecondary,
     error: AppColors.error,
     onError: AppColors.white,
-    background: AppColors.background,
-    onBackground: AppColors.textPrimary,
     surface: AppColors.surface,
     onSurface: AppColors.textPrimary,
   );
@@ -90,8 +88,6 @@ class AppColorScheme {
     onSecondary: AppColors.textOnSecondary,
     error: AppColors.error,
     onError: AppColors.white,
-    background: AppColors.grey900,
-    onBackground: AppColors.white,
     surface: AppColors.grey800,
     onSurface: AppColors.white,
   );
