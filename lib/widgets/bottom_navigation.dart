@@ -95,7 +95,6 @@ class _NavBarItem extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              // Icon with badge
               Stack(
                 clipBehavior: Clip.none,
                 children: [
@@ -110,7 +109,7 @@ class _NavBarItem extends StatelessWidget {
               ),
 
               if (showLabel) ...[
-                const SizedBox(height: 2),
+                const SizedBox(height: 4),
                 Text(
                   item.label,
                   style: AppTypography.navigationLabel.copyWith(

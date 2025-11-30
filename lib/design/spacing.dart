@@ -102,7 +102,7 @@ class AppSizes {
 
   // App bar and navigation
   static const double appBarHeight = 56.0;
-  static const double bottomNavHeight = 60.0;
+  static const double bottomNavHeight = 86.0;
   static const double tabBarHeight = 48.0;
 
   // Product card specific (from design)
