@@ -1,0 +1,519 @@
+{
+  "@@locale": "en",
+  
+  "appTitle": "Supplier App",
+  "@appTitle": {
+    "description": "The title of the application"
+  },
+
+  "logo": "logo",
+  "@logo": {
+    "description": "Logo text placeholder"
+  },
+
+  "home": "Home",
+  "@home": {
+    "description": "Home navigation label"
+  },
+
+  "orders": "Orders",
+  "@orders": {
+    "description": "Orders navigation label"
+  },
+
+  "cart": "Cart",
+  "@cart": {
+    "description": "Cart navigation label"
+  },
+
+  "profile": "Profile",
+  "@profile": {
+    "description": "Profile navigation label"
+  },
+
+  "products": "Products",
+  "@products": {
+    "description": "Products navigation label"
+  },
+
+  "featuredProducts": "Featured Products",
+  "@featuredProducts": {
+    "description": "Featured products section title"
+  },
+
+  "createOrder": "Create Order",
+  "@createOrder": {
+    "description": "Create order button label"
+  },
+
+  "invoices": "Invoices",
+  "@invoices": {
+    "description": "Invoices button label"
+  },
+
+  "inventory": "Inventory",
+  "@inventory": {
+    "description": "Inventory menu label"
+  },
+
+  "reports": "Reports",
+  "@reports": {
+    "description": "Reports menu label"
+  },
+
+  "settings": "Settings",
+  "@settings": {
+    "description": "Settings menu label"
+  },
+
+  "notifications": "Notifications",
+  "@notifications": {
+    "description": "Notifications menu label"
+  },
+
+  "support": "Support",
+  "@support": {
+    "description": "Support menu label"
+  },
+
+  "dashboard": "Dashboard",
+  "@dashboard": {
+    "description": "Dashboard menu label"
+  },
+
+  "welcomeBack": "Welcome Back",
+  "@welcomeBack": {
+    "description": "Login screen welcome title"
+  },
+
+  "login": "Login",
+  "@login": {
+    "description": "Login button label"
+  },
+
+  "loginSuccessful": "Login successful!",
+  "@loginSuccessful": {
+    "description": "Login success message"
+  },
+
+  "emailAddress": "Email address",
+  "@emailAddress": {
+    "description": "Email field hint text"
+  },
+
+  "password": "Password",
+  "@password": {
+    "description": "Password field hint text"
+  },
+
+  "forgotPassword": "Forgot password?",
+  "@forgotPassword": {
+    "description": "Forgot password link text"
+  },
+
+  "forgotPasswordComingSoon": "Forgot password functionality coming soon!",
+  "@forgotPasswordComingSoon": {
+    "description": "Forgot password coming soon message"
+  },
+
+  "dontHaveAccount": "Don't have an account? ",
+  "@dontHaveAccount": {
+    "description": "Don't have account text"
+  },
+
+  "signUp": "Sign up",
+  "@signUp": {
+    "description": "Sign up link text"
+  },
+
+  "createAccount": "Create Account",
+  "@createAccount": {
+    "description": "Create account title and button"
+  },
+
+  "joinSupplierNetwork": "Join our supplier network today",
+  "@joinSupplierNetwork": {
+    "description": "Sign up subtitle"
+  },
+
+  "fullName": "Full name",
+  "@fullName": {
+    "description": "Full name field hint"
+  },
+
+  "companyName": "Company name",
+  "@companyName": {
+    "description": "Company name field hint"
+  },
+
+  "phoneNumber": "Phone number",
+  "@phoneNumber": {
+    "description": "Phone number field hint"
+  },
+
+  "confirmPassword": "Confirm password",
+  "@confirmPassword": {
+    "description": "Confirm password field hint"
+  },
+
+  "iAgreeToThe": "I agree to the ",
+  "@iAgreeToThe": {
+    "description": "Terms agreement prefix"
+  },
+
+  "termsAndConditions": "Terms and Conditions",
+  "@termsAndConditions": {
+    "description": "Terms and conditions link text"
+  },
+
+  "and": " and ",
+  "@and": {
+    "description": "And conjunction"
+  },
+
+  "privacyPolicy": "Privacy Policy",
+  "@privacyPolicy": {
+    "description": "Privacy policy link text"
+  },
+
+  "accountCreatedSuccessfully": "Account created successfully!",
+  "@accountCreatedSuccessfully": {
+    "description": "Account created success message"
+  },
+
+  "alreadyHaveAccount": "Already have an account? ",
+  "@alreadyHaveAccount": {
+    "description": "Already have account text"
+  },
+
+  "signIn": "Sign in",
+  "@signIn": {
+    "description": "Sign in link text"
+  },
+
+  "pleaseEnterEmail": "Please enter your email address",
+  "@pleaseEnterEmail": {
+    "description": "Email required validation message"
+  },
+
+  "pleaseEnterValidEmail": "Please enter a valid email address",
+  "@pleaseEnterValidEmail": {
+    "description": "Email format validation message"
+  },
+
+  "pleaseEnterPassword": "Please enter your password",
+  "@pleaseEnterPassword": {
+    "description": "Password required validation message"
+  },
+
+  "passwordMinLength": "Password must be at least 6 characters",
+  "@passwordMinLength": {
+    "description": "Password minimum length validation"
+  },
+
+  "pleaseEnterFullName": "Please enter your full name",
+  "@pleaseEnterFullName": {
+    "description": "Full name required validation"
+  },
+
+  "pleaseEnterFirstLastName": "Please enter your first and last name",
+  "@pleaseEnterFirstLastName": {
+    "description": "First and last name validation"
+  },
+
+  "pleaseEnterCompanyName": "Please enter your company name",
+  "@pleaseEnterCompanyName": {
+    "description": "Company name required validation"
+  },
+
+  "pleaseEnterPhoneNumber": "Please enter your phone number",
+  "@pleaseEnterPhoneNumber": {
+    "description": "Phone number required validation"
+  },
+
+  "pleaseEnterValidPhoneNumber": "Please enter a valid phone number",
+  "@pleaseEnterValidPhoneNumber": {
+    "description": "Phone number format validation"
+  },
+
+  "pleaseEnterAPassword": "Please enter a password",
+  "@pleaseEnterAPassword": {
+    "description": "Password required validation for signup"
+  },
+
+  "passwordMinLengthEight": "Password must be at least 8 characters",
+  "@passwordMinLengthEight": {
+    "description": "Password 8 char minimum validation"
+  },
+
+  "passwordRequirements": "Password must contain uppercase, lowercase, and number",
+  "@passwordRequirements": {
+    "description": "Password complexity validation"
+  },
+
+  "pleaseConfirmPassword": "Please confirm your password",
+  "@pleaseConfirmPassword": {
+    "description": "Confirm password required validation"
+  },
+
+  "passwordsDoNotMatch": "Passwords do not match",
+  "@passwordsDoNotMatch": {
+    "description": "Passwords mismatch validation"
+  },
+
+  "pleaseAgreeToTerms": "Please agree to the terms and conditions",
+  "@pleaseAgreeToTerms": {
+    "description": "Terms agreement required message"
+  },
+
+  "searchComingSoon": "Search functionality coming soon!",
+  "@searchComingSoon": {
+    "description": "Search coming soon message"
+  },
+
+  "notificationsComingSoon": "Notifications coming soon!",
+  "@notificationsComingSoon": {
+    "description": "Notifications coming soon message"
+  },
+
+  "addedToOrder": "{productName} added to order!",
+  "@addedToOrder": {
+    "description": "Product added to order message",
+    "placeholders": {
+      "productName": {
+        "type": "String",
+        "example": "Tomatoes"
+      }
+    }
+  },
+
+  "navigateToCreateOrder": "Navigate to Create Order screen",
+  "@navigateToCreateOrder": {
+    "description": "Create order navigation message"
+  },
+
+  "navigateToInvoices": "Navigate to Invoices screen",
+  "@navigateToInvoices": {
+    "description": "Invoices navigation message"
+  },
+
+  "navigateToOrders": "Navigate to Orders screen",
+  "@navigateToOrders": {
+    "description": "Orders navigation message"
+  },
+
+  "navigateToCart": "Navigate to Cart screen",
+  "@navigateToCart": {
+    "description": "Cart navigation message"
+  },
+
+  "navigateToProfile": "Navigate to Profile screen",
+  "@navigateToProfile": {
+    "description": "Profile navigation message"
+  },
+
+  "descriptionDashboard": "Dashboard and overview",
+  "@descriptionDashboard": {
+    "description": "Home menu item description"
+  },
+
+  "descriptionProducts": "Browse and manage products",
+  "@descriptionProducts": {
+    "description": "Products menu item description"
+  },
+
+  "descriptionOrders": "View and manage orders",
+  "@descriptionOrders": {
+    "description": "Orders menu item description"
+  },
+
+  "descriptionCart": "Shopping cart items",
+  "@descriptionCart": {
+    "description": "Cart menu item description"
+  },
+
+  "descriptionProfile": "Account and settings",
+  "@descriptionProfile": {
+    "description": "Profile menu item description"
+  },
+
+  "descriptionCreateOrder": "Start a new order",
+  "@descriptionCreateOrder": {
+    "description": "Create order menu item description"
+  },
+
+  "descriptionInvoices": "View billing and invoices",
+  "@descriptionInvoices": {
+    "description": "Invoices menu item description"
+  },
+
+  "descriptionInventory": "Manage stock levels",
+  "@descriptionInventory": {
+    "description": "Inventory menu item description"
+  },
+
+  "descriptionReports": "Analytics and insights",
+  "@descriptionReports": {
+    "description": "Reports menu item description"
+  },
+
+  "descriptionSettings": "App preferences",
+  "@descriptionSettings": {
+    "description": "Settings menu item description"
+  },
+
+  "descriptionNotifications": "View notifications",
+  "@descriptionNotifications": {
+    "description": "Notifications menu item description"
+  },
+
+  "descriptionSupport": "Help and contact",
+  "@descriptionSupport": {
+    "description": "Support menu item description"
+  },
+
+  "all": "All",
+  "@all": {
+    "description": "All filter option"
+  },
+
+  "pending": "Pending",
+  "@pending": {
+    "description": "Pending status"
+  },
+
+  "processing": "Processing",
+  "@processing": {
+    "description": "Processing status"
+  },
+
+  "completed": "Completed",
+  "@completed": {
+    "description": "Completed status"
+  },
+
+  "cancelled": "Cancelled",
+  "@cancelled": {
+    "description": "Cancelled status"
+  },
+
+  "searchOrders": "Search orders...",
+  "@searchOrders": {
+    "description": "Search orders placeholder"
+  },
+
+  "noOrdersFound": "No orders found",
+  "@noOrdersFound": {
+    "description": "Empty orders message"
+  },
+
+  "noOrdersDescription": "You don't have any orders yet. Create your first order to get started.",
+  "@noOrdersDescription": {
+    "description": "Empty orders description"
+  },
+
+  "items": "items",
+  "@items": {
+    "description": "Items label"
+  },
+
+  "orderDetails": "Order Details",
+  "@orderDetails": {
+    "description": "Order details title"
+  },
+
+  "customerInfo": "Customer Information",
+  "@customerInfo": {
+    "description": "Customer info section title"
+  },
+
+  "customerName": "Name",
+  "@customerName": {
+    "description": "Customer name label"
+  },
+
+  "phone": "Phone",
+  "@phone": {
+    "description": "Phone label"
+  },
+
+  "email": "Email",
+  "@email": {
+    "description": "Email label"
+  },
+
+  "deliveryInfo": "Delivery Information",
+  "@deliveryInfo": {
+    "description": "Delivery info section title"
+  },
+
+  "deliveryAddress": "Address",
+  "@deliveryAddress": {
+    "description": "Delivery address label"
+  },
+
+  "deliveryDate": "Delivery Date",
+  "@deliveryDate": {
+    "description": "Delivery date label"
+  },
+
+  "orderSummary": "Order Summary",
+  "@orderSummary": {
+    "description": "Order summary section title"
+  },
+
+  "subtotal": "Subtotal",
+  "@subtotal": {
+    "description": "Subtotal label"
+  },
+
+  "shipping": "Shipping",
+  "@shipping": {
+    "description": "Shipping label"
+  },
+
+  "tax": "Tax",
+  "@tax": {
+    "description": "Tax label"
+  },
+
+  "total": "Total",
+  "@total": {
+    "description": "Total label"
+  },
+
+  "contactCustomer": "Contact",
+  "@contactCustomer": {
+    "description": "Contact customer button"
+  },
+
+  "startProcessing": "Start Processing",
+  "@startProcessing": {
+    "description": "Start processing order button"
+  },
+
+  "markCompleted": "Mark Completed",
+  "@markCompleted": {
+    "description": "Mark order completed button"
+  },
+
+  "viewInvoice": "View Invoice",
+  "@viewInvoice": {
+    "description": "View invoice button"
+  },
+
+  "reorder": "Reorder",
+  "@reorder": {
+    "description": "Reorder button"
+  },
+
+  "viewDetails": "View Details",
+  "@viewDetails": {
+    "description": "View details button"
+  },
+
+  "filterComingSoon": "Filter functionality coming soon!",
+  "@filterComingSoon": {
+    "description": "Filter coming soon message"
+  }
+}

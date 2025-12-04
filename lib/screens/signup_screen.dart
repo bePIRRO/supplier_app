@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../l10n/app_localizations.dart';
 import '../design/design_system.dart';
 
 /// Sign up screen for the Supplier App
@@ -42,8 +43,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
     if (!_agreeToTerms) {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text('Please agree to the terms and conditions'),
+        SnackBar(
+          content: Text(AppLocalizations.of(context)!.pleaseAgreeToTerms),
           backgroundColor: AppColors.error,
         ),
       );
@@ -65,8 +66,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
     // For now, just show a success message and navigate back
     if (mounted) {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text('Account created successfully!'),
+        SnackBar(
+          content: Text(
+            AppLocalizations.of(context)!.accountCreatedSuccessfully,
+          ),
           backgroundColor: AppColors.success,
         ),
       );
@@ -101,21 +104,26 @@ class _SignUpScreenState extends State<SignUpScreen> {
               const SizedBox(height: AppSpacing.spaceLg),
 
               // Logo Section
-              const Center(child: Text('Logo', style: AppTypography.logoText)),
+              Center(
+                child: Text(
+                  AppLocalizations.of(context)!.logo,
+                  style: AppTypography.logoText,
+                ),
+              ),
 
               const SizedBox(height: AppSpacing.spaceXl),
 
               // Create Account Header
-              const Text(
-                'Create Account',
+              Text(
+                AppLocalizations.of(context)!.createAccount,
                 style: AppTypography.welcomeTitle,
                 textAlign: TextAlign.center,
               ),
 
               const SizedBox(height: AppSpacing.paddingSm),
 
-              const Text(
-                'Join our supplier network today',
+              Text(
+                AppLocalizations.of(context)!.joinSupplierNetwork,
                 style: AppTypography.bodyMedium,
                 textAlign: TextAlign.center,
               ),
@@ -129,235 +137,270 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
                     // Full Name Field
-                    TextFormField(
-                      controller: _nameController,
-                      keyboardType: TextInputType.name,
-                      textCapitalization: TextCapitalization.words,
-                      decoration: AppInputStyles.primaryInput.copyWith(
-                        hintText: 'Full name',
-                        prefixIcon: const Icon(
-                          Icons.person_outline,
-                          color: AppColors.textSecondary,
-                        ),
-                      ),
-                      style: AppTypography.inputText,
-                      validator: (value) {
-                        if (value == null || value.isEmpty) {
-                          return 'Please enter your full name';
-                        }
-                        if (value.trim().split(' ').length < 2) {
-                          return 'Please enter your first and last name';
-                        }
-                        return null;
+                    Builder(
+                      builder: (context) {
+                        final l10n = AppLocalizations.of(context)!;
+                        return TextFormField(
+                          controller: _nameController,
+                          keyboardType: TextInputType.name,
+                          textCapitalization: TextCapitalization.words,
+                          decoration: AppInputStyles.primaryInput.copyWith(
+                            hintText: l10n.fullName,
+                            prefixIcon: const Icon(
+                              Icons.person_outline,
+                              color: AppColors.textSecondary,
+                            ),
+                          ),
+                          style: AppTypography.inputText,
+                          validator: (value) {
+                            if (value == null || value.isEmpty) {
+                              return l10n.pleaseEnterFullName;
+                            }
+                            if (value.trim().split(' ').length < 2) {
+                              return l10n.pleaseEnterFirstLastName;
+                            }
+                            return null;
+                          },
+                        );
                       },
                     ),
 
                     const SizedBox(height: AppSpacing.spaceMd),
 
                     // Email Field
-                    TextFormField(
-                      controller: _emailController,
-                      keyboardType: TextInputType.emailAddress,
-                      decoration: AppInputStyles.primaryInput.copyWith(
-                        hintText: 'Email address',
-                        prefixIcon: const Icon(
-                          Icons.email_outlined,
-                          color: AppColors.textSecondary,
-                        ),
-                      ),
-                      style: AppTypography.inputText,
-                      validator: (value) {
-                        if (value == null || value.isEmpty) {
-                          return 'Please enter your email address';
-                        }
-                        if (!RegExp(
-                          r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$',
-                        ).hasMatch(value)) {
-                          return 'Please enter a valid email address';
-                        }
-                        return null;
+                    Builder(
+                      builder: (context) {
+                        final l10n = AppLocalizations.of(context)!;
+                        return TextFormField(
+                          controller: _emailController,
+                          keyboardType: TextInputType.emailAddress,
+                          decoration: AppInputStyles.primaryInput.copyWith(
+                            hintText: l10n.emailAddress,
+                            prefixIcon: const Icon(
+                              Icons.email_outlined,
+                              color: AppColors.textSecondary,
+                            ),
+                          ),
+                          style: AppTypography.inputText,
+                          validator: (value) {
+                            if (value == null || value.isEmpty) {
+                              return l10n.pleaseEnterEmail;
+                            }
+                            if (!RegExp(
+                              r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$',
+                            ).hasMatch(value)) {
+                              return l10n.pleaseEnterValidEmail;
+                            }
+                            return null;
+                          },
+                        );
                       },
                     ),
 
                     const SizedBox(height: AppSpacing.spaceMd),
 
                     // Company Name Field
-                    TextFormField(
-                      controller: _companyController,
-                      keyboardType: TextInputType.text,
-                      textCapitalization: TextCapitalization.words,
-                      decoration: AppInputStyles.primaryInput.copyWith(
-                        hintText: 'Company name',
-                        prefixIcon: const Icon(
-                          Icons.business_outlined,
-                          color: AppColors.textSecondary,
-                        ),
-                      ),
-                      style: AppTypography.inputText,
-                      validator: (value) {
-                        if (value == null || value.isEmpty) {
-                          return 'Please enter your company name';
-                        }
-                        return null;
+                    Builder(
+                      builder: (context) {
+                        final l10n = AppLocalizations.of(context)!;
+                        return TextFormField(
+                          controller: _companyController,
+                          keyboardType: TextInputType.text,
+                          textCapitalization: TextCapitalization.words,
+                          decoration: AppInputStyles.primaryInput.copyWith(
+                            hintText: l10n.companyName,
+                            prefixIcon: const Icon(
+                              Icons.business_outlined,
+                              color: AppColors.textSecondary,
+                            ),
+                          ),
+                          style: AppTypography.inputText,
+                          validator: (value) {
+                            if (value == null || value.isEmpty) {
+                              return l10n.pleaseEnterCompanyName;
+                            }
+                            return null;
+                          },
+                        );
                       },
                     ),
 
                     const SizedBox(height: AppSpacing.spaceMd),
 
                     // Phone Number Field
-                    TextFormField(
-                      controller: _phoneController,
-                      keyboardType: TextInputType.phone,
-                      decoration: AppInputStyles.primaryInput.copyWith(
-                        hintText: 'Phone number',
-                        prefixIcon: const Icon(
-                          Icons.phone_outlined,
-                          color: AppColors.textSecondary,
-                        ),
-                      ),
-                      style: AppTypography.inputText,
-                      validator: (value) {
-                        if (value == null || value.isEmpty) {
-                          return 'Please enter your phone number';
-                        }
-                        if (value.length < 10) {
-                          return 'Please enter a valid phone number';
-                        }
-                        return null;
+                    Builder(
+                      builder: (context) {
+                        final l10n = AppLocalizations.of(context)!;
+                        return TextFormField(
+                          controller: _phoneController,
+                          keyboardType: TextInputType.phone,
+                          decoration: AppInputStyles.primaryInput.copyWith(
+                            hintText: l10n.phoneNumber,
+                            prefixIcon: const Icon(
+                              Icons.phone_outlined,
+                              color: AppColors.textSecondary,
+                            ),
+                          ),
+                          style: AppTypography.inputText,
+                          validator: (value) {
+                            if (value == null || value.isEmpty) {
+                              return l10n.pleaseEnterPhoneNumber;
+                            }
+                            if (value.length < 10) {
+                              return l10n.pleaseEnterValidPhoneNumber;
+                            }
+                            return null;
+                          },
+                        );
                       },
                     ),
 
                     const SizedBox(height: AppSpacing.spaceMd),
 
                     // Password Field
-                    TextFormField(
-                      controller: _passwordController,
-                      obscureText: _obscurePassword,
-                      decoration: AppInputStyles.primaryInput.copyWith(
-                        hintText: 'Password',
-                        prefixIcon: const Icon(
-                          Icons.lock_outline,
-                          color: AppColors.textSecondary,
-                        ),
-                        suffixIcon: IconButton(
-                          icon: Icon(
-                            _obscurePassword
-                                ? Icons.visibility_outlined
-                                : Icons.visibility_off_outlined,
-                            color: AppColors.textSecondary,
+                    Builder(
+                      builder: (context) {
+                        final l10n = AppLocalizations.of(context)!;
+                        return TextFormField(
+                          controller: _passwordController,
+                          obscureText: _obscurePassword,
+                          decoration: AppInputStyles.primaryInput.copyWith(
+                            hintText: l10n.password,
+                            prefixIcon: const Icon(
+                              Icons.lock_outline,
+                              color: AppColors.textSecondary,
+                            ),
+                            suffixIcon: IconButton(
+                              icon: Icon(
+                                _obscurePassword
+                                    ? Icons.visibility_outlined
+                                    : Icons.visibility_off_outlined,
+                                color: AppColors.textSecondary,
+                              ),
+                              onPressed: () {
+                                setState(() {
+                                  _obscurePassword = !_obscurePassword;
+                                });
+                              },
+                            ),
                           ),
-                          onPressed: () {
-                            setState(() {
-                              _obscurePassword = !_obscurePassword;
-                            });
+                          style: AppTypography.inputText,
+                          validator: (value) {
+                            if (value == null || value.isEmpty) {
+                              return l10n.pleaseEnterAPassword;
+                            }
+                            if (value.length < 8) {
+                              return l10n.passwordMinLengthEight;
+                            }
+                            if (!RegExp(
+                              r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)',
+                            ).hasMatch(value)) {
+                              return l10n.passwordRequirements;
+                            }
+                            return null;
                           },
-                        ),
-                      ),
-                      style: AppTypography.inputText,
-                      validator: (value) {
-                        if (value == null || value.isEmpty) {
-                          return 'Please enter a password';
-                        }
-                        if (value.length < 8) {
-                          return 'Password must be at least 8 characters';
-                        }
-                        if (!RegExp(
-                          r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)',
-                        ).hasMatch(value)) {
-                          return 'Password must contain uppercase, lowercase, and number';
-                        }
-                        return null;
+                        );
                       },
                     ),
 
                     const SizedBox(height: AppSpacing.spaceMd),
 
                     // Confirm Password Field
-                    TextFormField(
-                      controller: _confirmPasswordController,
-                      obscureText: _obscureConfirmPassword,
-                      decoration: AppInputStyles.primaryInput.copyWith(
-                        hintText: 'Confirm password',
-                        prefixIcon: const Icon(
-                          Icons.lock_outline,
-                          color: AppColors.textSecondary,
-                        ),
-                        suffixIcon: IconButton(
-                          icon: Icon(
-                            _obscureConfirmPassword
-                                ? Icons.visibility_outlined
-                                : Icons.visibility_off_outlined,
-                            color: AppColors.textSecondary,
+                    Builder(
+                      builder: (context) {
+                        final l10n = AppLocalizations.of(context)!;
+                        return TextFormField(
+                          controller: _confirmPasswordController,
+                          obscureText: _obscureConfirmPassword,
+                          decoration: AppInputStyles.primaryInput.copyWith(
+                            hintText: l10n.confirmPassword,
+                            prefixIcon: const Icon(
+                              Icons.lock_outline,
+                              color: AppColors.textSecondary,
+                            ),
+                            suffixIcon: IconButton(
+                              icon: Icon(
+                                _obscureConfirmPassword
+                                    ? Icons.visibility_outlined
+                                    : Icons.visibility_off_outlined,
+                                color: AppColors.textSecondary,
+                              ),
+                              onPressed: () {
+                                setState(() {
+                                  _obscureConfirmPassword =
+                                      !_obscureConfirmPassword;
+                                });
+                              },
+                            ),
                           ),
-                          onPressed: () {
-                            setState(() {
-                              _obscureConfirmPassword =
-                                  !_obscureConfirmPassword;
-                            });
+                          style: AppTypography.inputText,
+                          validator: (value) {
+                            if (value == null || value.isEmpty) {
+                              return l10n.pleaseConfirmPassword;
+                            }
+                            if (value != _passwordController.text) {
+                              return l10n.passwordsDoNotMatch;
+                            }
+                            return null;
                           },
-                        ),
-                      ),
-                      style: AppTypography.inputText,
-                      validator: (value) {
-                        if (value == null || value.isEmpty) {
-                          return 'Please confirm your password';
-                        }
-                        if (value != _passwordController.text) {
-                          return 'Passwords do not match';
-                        }
-                        return null;
+                        );
                       },
                     ),
 
                     const SizedBox(height: AppSpacing.spaceMd),
 
                     // Terms and Conditions Checkbox
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Checkbox(
-                          value: _agreeToTerms,
-                          onChanged: (value) {
-                            setState(() {
-                              _agreeToTerms = value ?? false;
-                            });
-                          },
-                          fillColor: WidgetStateProperty.resolveWith((
-                            states,
-                          ) {
-                            if (states.contains(WidgetState.selected)) {
-                              return AppColors.primary;
-                            }
-                            return AppColors.grey300;
-                          }),
-                        ),
-                        Expanded(
-                          child: Padding(
-                            padding: const EdgeInsets.only(top: 12),
-                            child: RichText(
-                              text: TextSpan(
-                                style: AppTypography.bodySmall,
-                                children: [
-                                  const TextSpan(text: 'I agree to the '),
-                                  TextSpan(
-                                    text: 'Terms and Conditions',
-                                    style: AppTypography.link.copyWith(
-                                      fontSize: 12,
-                                    ),
+                    Builder(
+                      builder: (context) {
+                        final l10n = AppLocalizations.of(context)!;
+                        return Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Checkbox(
+                              value: _agreeToTerms,
+                              onChanged: (value) {
+                                setState(() {
+                                  _agreeToTerms = value ?? false;
+                                });
+                              },
+                              fillColor: WidgetStateProperty.resolveWith((
+                                states,
+                              ) {
+                                if (states.contains(WidgetState.selected)) {
+                                  return AppColors.primary;
+                                }
+                                return AppColors.grey300;
+                              }),
+                            ),
+                            Expanded(
+                              child: Padding(
+                                padding: const EdgeInsets.only(top: 12),
+                                child: RichText(
+                                  text: TextSpan(
+                                    style: AppTypography.bodySmall,
+                                    children: [
+                                      TextSpan(text: l10n.iAgreeToThe),
+                                      TextSpan(
+                                        text: l10n.termsAndConditions,
+                                        style: AppTypography.link.copyWith(
+                                          fontSize: 12,
+                                        ),
+                                      ),
+                                      TextSpan(text: l10n.and),
+                                      TextSpan(
+                                        text: l10n.privacyPolicy,
+                                        style: AppTypography.link.copyWith(
+                                          fontSize: 12,
+                                        ),
+                                      ),
+                                    ],
                                   ),
-                                  const TextSpan(text: ' and '),
-                                  TextSpan(
-                                    text: 'Privacy Policy',
-                                    style: AppTypography.link.copyWith(
-                                      fontSize: 12,
-                                    ),
-                                  ),
-                                ],
+                                ),
                               ),
                             ),
-                          ),
-                        ),
-                      ],
+                          ],
+                        );
+                      },
                     ),
 
                     const SizedBox(height: AppSpacing.spaceLg),
@@ -370,7 +413,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         style: AppButtonStyles.primaryButton,
                         child: _isLoading
                             ? const AppLoader.button()
-                            : const Text('Create Account'),
+                            : Text(AppLocalizations.of(context)!.createAccount),
                       ),
                     ),
 
@@ -380,8 +423,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        const Text(
-                          'Already have an account? ',
+                        Text(
+                          AppLocalizations.of(context)!.alreadyHaveAccount,
                           style: AppTypography.bodyMedium,
                         ),
                         TextButton(
@@ -394,8 +437,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               ),
                             ),
                           ),
-                          child: const Text(
-                            'Sign in',
+                          child: Text(
+                            AppLocalizations.of(context)!.signIn,
                             style: AppTypography.link,
                           ),
                         ),

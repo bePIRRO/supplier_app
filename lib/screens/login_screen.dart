@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../l10n/app_localizations.dart';
 import '../design/design_system.dart';
 import 'signup_screen.dart';
 
@@ -45,8 +46,8 @@ class _LoginScreenState extends State<LoginScreen> {
     // For now, just show a success message
     if (mounted) {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text('Login successful!'),
+        SnackBar(
+          content: Text(AppLocalizations.of(context)!.loginSuccessful),
           backgroundColor: AppColors.success,
         ),
       );
@@ -63,8 +64,8 @@ class _LoginScreenState extends State<LoginScreen> {
   void _handleForgotPassword() {
     // TODO: Implement forgot password functionality
     ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(
-        content: Text('Forgot password functionality coming soon!'),
+      SnackBar(
+        content: Text(AppLocalizations.of(context)!.forgotPasswordComingSoon),
       ),
     );
   }
@@ -82,13 +83,18 @@ class _LoginScreenState extends State<LoginScreen> {
               const SizedBox(height: AppSpacing.space3xl),
 
               // Logo Section
-              const Center(child: Text('Logo', style: AppTypography.logoText)),
+              Center(
+                child: Text(
+                  AppLocalizations.of(context)!.logo,
+                  style: AppTypography.logoText,
+                ),
+              ),
 
               const SizedBox(height: AppSpacing.space2xl),
 
               // Welcome Back Header
-              const Text(
-                'Welcome Back',
+              Text(
+                AppLocalizations.of(context)!.welcomeBack,
                 style: AppTypography.welcomeTitle,
                 textAlign: TextAlign.center,
               ),
@@ -102,65 +108,75 @@ class _LoginScreenState extends State<LoginScreen> {
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
                     // Email Field
-                    TextFormField(
-                      controller: _emailController,
-                      keyboardType: TextInputType.emailAddress,
-                      decoration: AppInputStyles.primaryInput.copyWith(
-                        hintText: 'Email address',
-                        prefixIcon: const Icon(
-                          Icons.email_outlined,
-                          color: AppColors.textSecondary,
-                        ),
-                      ),
-                      style: AppTypography.inputText,
-                      validator: (value) {
-                        if (value == null || value.isEmpty) {
-                          return 'Please enter your email address';
-                        }
-                        if (!RegExp(
-                          r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$',
-                        ).hasMatch(value)) {
-                          return 'Please enter a valid email address';
-                        }
-                        return null;
+                    Builder(
+                      builder: (context) {
+                        final l10n = AppLocalizations.of(context)!;
+                        return TextFormField(
+                          controller: _emailController,
+                          keyboardType: TextInputType.emailAddress,
+                          decoration: AppInputStyles.primaryInput.copyWith(
+                            hintText: l10n.emailAddress,
+                            prefixIcon: const Icon(
+                              Icons.email_outlined,
+                              color: AppColors.textSecondary,
+                            ),
+                          ),
+                          style: AppTypography.inputText,
+                          validator: (value) {
+                            if (value == null || value.isEmpty) {
+                              return l10n.pleaseEnterEmail;
+                            }
+                            if (!RegExp(
+                              r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$',
+                            ).hasMatch(value)) {
+                              return l10n.pleaseEnterValidEmail;
+                            }
+                            return null;
+                          },
+                        );
                       },
                     ),
 
                     const SizedBox(height: AppSpacing.spaceMd),
 
                     // Password Field
-                    TextFormField(
-                      controller: _passwordController,
-                      obscureText: _obscurePassword,
-                      decoration: AppInputStyles.primaryInput.copyWith(
-                        hintText: 'Password',
-                        prefixIcon: const Icon(
-                          Icons.lock_outline,
-                          color: AppColors.textSecondary,
-                        ),
-                        suffixIcon: IconButton(
-                          icon: Icon(
-                            _obscurePassword
-                                ? Icons.visibility_outlined
-                                : Icons.visibility_off_outlined,
-                            color: AppColors.textSecondary,
+                    Builder(
+                      builder: (context) {
+                        final l10n = AppLocalizations.of(context)!;
+                        return TextFormField(
+                          controller: _passwordController,
+                          obscureText: _obscurePassword,
+                          decoration: AppInputStyles.primaryInput.copyWith(
+                            hintText: l10n.password,
+                            prefixIcon: const Icon(
+                              Icons.lock_outline,
+                              color: AppColors.textSecondary,
+                            ),
+                            suffixIcon: IconButton(
+                              icon: Icon(
+                                _obscurePassword
+                                    ? Icons.visibility_outlined
+                                    : Icons.visibility_off_outlined,
+                                color: AppColors.textSecondary,
+                              ),
+                              onPressed: () {
+                                setState(() {
+                                  _obscurePassword = !_obscurePassword;
+                                });
+                              },
+                            ),
                           ),
-                          onPressed: () {
-                            setState(() {
-                              _obscurePassword = !_obscurePassword;
-                            });
+                          style: AppTypography.inputText,
+                          validator: (value) {
+                            if (value == null || value.isEmpty) {
+                              return l10n.pleaseEnterPassword;
+                            }
+                            if (value.length < 6) {
+                              return l10n.passwordMinLength;
+                            }
+                            return null;
                           },
-                        ),
-                      ),
-                      style: AppTypography.inputText,
-                      validator: (value) {
-                        if (value == null || value.isEmpty) {
-                          return 'Please enter your password';
-                        }
-                        if (value.length < 6) {
-                          return 'Password must be at least 6 characters';
-                        }
-                        return null;
+                        );
                       },
                     ),
 
@@ -174,7 +190,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         style: AppButtonStyles.primaryButton,
                         child: _isLoading
                             ? const AppLoader.button()
-                            : const Text('Login'),
+                            : Text(AppLocalizations.of(context)!.login),
                       ),
                     ),
 
@@ -185,8 +201,8 @@ class _LoginScreenState extends State<LoginScreen> {
                       child: TextButton(
                         onPressed: _handleForgotPassword,
                         style: AppButtonStyles.textButton,
-                        child: const Text(
-                          'Forgot password?',
+                        child: Text(
+                          AppLocalizations.of(context)!.forgotPassword,
                           style: AppTypography.link,
                         ),
                       ),
@@ -198,8 +214,8 @@ class _LoginScreenState extends State<LoginScreen> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        const Text(
-                          "Don't have an account? ",
+                        Text(
+                          AppLocalizations.of(context)!.dontHaveAccount,
                           style: AppTypography.bodyMedium,
                         ),
                         TextButton(
@@ -212,8 +228,8 @@ class _LoginScreenState extends State<LoginScreen> {
                               ),
                             ),
                           ),
-                          child: const Text(
-                            'Sign up',
+                          child: Text(
+                            AppLocalizations.of(context)!.signUp,
                             style: AppTypography.link,
                           ),
                         ),

@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import '../l10n/app_localizations.dart';
 import '../design/design_system.dart';
 import '../widgets/product_card.dart';
 import '../widgets/category_icon.dart';
 import '../widgets/action_button.dart';
 import '../widgets/bottom_navigation.dart';
+import 'orders_screen.dart';
 
 /// Home screen for the Supplier App
 /// Displays featured products, categories, and main actions
@@ -79,7 +81,10 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
 
           // Logo Text
-          const Text('logo', style: AppTypography.logoText),
+          Text(
+            AppLocalizations.of(context)!.logo,
+            style: AppTypography.logoText,
+          ),
 
           // Action Icons
           Row(
@@ -112,9 +117,14 @@ class _HomeScreenState extends State<HomeScreen> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         // Section Title
-        const Padding(
-          padding: EdgeInsets.symmetric(horizontal: AppSpacing.screenPadding),
-          child: Text('Featured Products', style: AppTypography.h4),
+        Padding(
+          padding: const EdgeInsets.symmetric(
+            horizontal: AppSpacing.screenPadding,
+          ),
+          child: Text(
+            AppLocalizations.of(context)!.featuredProducts,
+            style: AppTypography.h4,
+          ),
         ),
 
         const SizedBox(height: AppSpacing.spaceMd),
@@ -173,7 +183,7 @@ class _HomeScreenState extends State<HomeScreen> {
           // Create Order Button
           Expanded(
             child: ActionButton.primary(
-              title: 'Create Order',
+              title: AppLocalizations.of(context)!.createOrder,
               icon: Icons.add_shopping_cart_outlined,
               onPressed: _onCreateOrder,
             ),
@@ -184,7 +194,7 @@ class _HomeScreenState extends State<HomeScreen> {
           // Invoices Button
           Expanded(
             child: ActionButton.secondary(
-              title: 'Invoices',
+              title: AppLocalizations.of(context)!.invoices,
               icon: Icons.receipt_long_outlined,
               onPressed: _onInvoices,
             ),
@@ -218,22 +228,24 @@ class _HomeScreenState extends State<HomeScreen> {
   void _onSearchPressed() {
     // TODO: Implement search functionality
     ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(content: Text('Search functionality coming soon!')),
+      SnackBar(content: Text(AppLocalizations.of(context)!.searchComingSoon)),
     );
   }
 
   void _onNotificationPressed() {
     // TODO: Implement notification functionality
-    ScaffoldMessenger.of(
-      context,
-    ).showSnackBar(const SnackBar(content: Text('Notifications coming soon!')));
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(AppLocalizations.of(context)!.notificationsComingSoon),
+      ),
+    );
   }
 
   void _onAddToOrder(ProductData product) {
     // TODO: Implement add to order functionality
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
-        content: Text('${product.name} added to order!'),
+        content: Text(AppLocalizations.of(context)!.addedToOrder(product.name)),
         backgroundColor: AppColors.success,
       ),
     );
@@ -242,36 +254,38 @@ class _HomeScreenState extends State<HomeScreen> {
   void _onCreateOrder() {
     // TODO: Navigate to create order screen
     ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(content: Text('Navigate to Create Order screen')),
+      SnackBar(
+        content: Text(AppLocalizations.of(context)!.navigateToCreateOrder),
+      ),
     );
   }
 
   void _onInvoices() {
     // TODO: Navigate to invoices screen
     ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(content: Text('Navigate to Invoices screen')),
+      SnackBar(content: Text(AppLocalizations.of(context)!.navigateToInvoices)),
     );
   }
 
   void _navigateToOrders() {
-    // TODO: Navigate to orders screen
-    ScaffoldMessenger.of(
+    Navigator.push(
       context,
-    ).showSnackBar(const SnackBar(content: Text('Navigate to Orders screen')));
+      MaterialPageRoute(builder: (context) => const OrdersScreen()),
+    );
   }
 
   void _navigateToCart() {
     // TODO: Navigate to cart screen
-    ScaffoldMessenger.of(
-      context,
-    ).showSnackBar(const SnackBar(content: Text('Navigate to Cart screen')));
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text(AppLocalizations.of(context)!.navigateToCart)),
+    );
   }
 
   void _navigateToProfile() {
     // TODO: Navigate to profile screen
-    ScaffoldMessenger.of(
-      context,
-    ).showSnackBar(const SnackBar(content: Text('Navigate to Profile screen')));
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text(AppLocalizations.of(context)!.navigateToProfile)),
+    );
   }
 }
 
