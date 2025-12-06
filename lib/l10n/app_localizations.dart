@@ -705,6 +705,258 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Filter functionality coming soon!'**
   String get filterComingSoon;
+
+  /// Cart screen title
+  ///
+  /// In en, this message translates to:
+  /// **'My Cart'**
+  String get myCart;
+
+  /// Empty cart message
+  ///
+  /// In en, this message translates to:
+  /// **'Your cart is empty'**
+  String get emptyCart;
+
+  /// Empty cart description
+  ///
+  /// In en, this message translates to:
+  /// **'Add products to your cart to create an order'**
+  String get emptyCartMessage;
+
+  /// Start shopping button
+  ///
+  /// In en, this message translates to:
+  /// **'Start Shopping'**
+  String get startShopping;
+
+  /// Quantity label
+  ///
+  /// In en, this message translates to:
+  /// **'Qty'**
+  String get quantity;
+
+  /// Remove item button
+  ///
+  /// In en, this message translates to:
+  /// **'Remove'**
+  String get remove;
+
+  /// Checkout button
+  ///
+  /// In en, this message translates to:
+  /// **'Checkout'**
+  String get checkout;
+
+  /// Clear cart button
+  ///
+  /// In en, this message translates to:
+  /// **'Clear Cart'**
+  String get clearCart;
+
+  /// Clear cart confirmation message
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure you want to clear your cart?'**
+  String get confirmClearCart;
+
+  /// Cancel button
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel'**
+  String get cancel;
+
+  /// Items count in cart
+  ///
+  /// In en, this message translates to:
+  /// **'{count} {count, plural, =1{item} other{items}} in cart'**
+  String itemsInCart(int count);
+
+  /// Checkout screen title
+  ///
+  /// In en, this message translates to:
+  /// **'Checkout'**
+  String get checkoutTitle;
+
+  /// Delivery information section title
+  ///
+  /// In en, this message translates to:
+  /// **'Delivery Information'**
+  String get deliveryInformation;
+
+  /// Contact information section title
+  ///
+  /// In en, this message translates to:
+  /// **'Contact Information'**
+  String get contactInformation;
+
+  /// Delivery notes section title
+  ///
+  /// In en, this message translates to:
+  /// **'Delivery Notes'**
+  String get deliveryNotes;
+
+  /// Payment method section title
+  ///
+  /// In en, this message translates to:
+  /// **'Payment Method'**
+  String get paymentMethod;
+
+  /// Address field label
+  ///
+  /// In en, this message translates to:
+  /// **'Address'**
+  String get address;
+
+  /// City field label
+  ///
+  /// In en, this message translates to:
+  /// **'City'**
+  String get city;
+
+  /// State field label
+  ///
+  /// In en, this message translates to:
+  /// **'State'**
+  String get state;
+
+  /// Zip code field label
+  ///
+  /// In en, this message translates to:
+  /// **'Zip Code'**
+  String get zipCode;
+
+  /// Notes field label
+  ///
+  /// In en, this message translates to:
+  /// **'Notes (optional)'**
+  String get notes;
+
+  /// Place order button
+  ///
+  /// In en, this message translates to:
+  /// **'Place Order'**
+  String get placeOrder;
+
+  /// Order summary section title in checkout
+  ///
+  /// In en, this message translates to:
+  /// **'Order Summary'**
+  String get orderSummaryTitle;
+
+  /// Address required validation
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter delivery address'**
+  String get pleaseEnterAddress;
+
+  /// City required validation
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter city'**
+  String get pleaseEnterCity;
+
+  /// State required validation
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter state'**
+  String get pleaseEnterState;
+
+  /// Zip code required validation
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter zip code'**
+  String get pleaseEnterZipCode;
+
+  /// Cash on delivery payment option
+  ///
+  /// In en, this message translates to:
+  /// **'Cash on Delivery'**
+  String get cashOnDelivery;
+
+  /// Credit card payment option
+  ///
+  /// In en, this message translates to:
+  /// **'Credit Card'**
+  String get creditCard;
+
+  /// Bank transfer payment option
+  ///
+  /// In en, this message translates to:
+  /// **'Bank Transfer'**
+  String get bankTransfer;
+
+  /// Order success message
+  ///
+  /// In en, this message translates to:
+  /// **'Order placed successfully!'**
+  String get orderPlacedSuccess;
+
+  /// Order success description
+  ///
+  /// In en, this message translates to:
+  /// **'Thank you for your order. We\'ll start processing it shortly.'**
+  String get thankYouForOrder;
+
+  /// Place order screen title
+  ///
+  /// In en, this message translates to:
+  /// **'Place Order'**
+  String get placeOrderTitle;
+
+  /// Confirm order button
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm Order'**
+  String get confirmOrder;
+
+  /// Order confirmation section title
+  ///
+  /// In en, this message translates to:
+  /// **'Order Confirmation'**
+  String get orderConfirmation;
+
+  /// Review order message
+  ///
+  /// In en, this message translates to:
+  /// **'Please review your order details before confirming'**
+  String get reviewYourOrder;
+
+  /// Edit order button
+  ///
+  /// In en, this message translates to:
+  /// **'Edit Order'**
+  String get editOrder;
+
+  /// Processing order message
+  ///
+  /// In en, this message translates to:
+  /// **'Processing your order...'**
+  String get processingOrder;
+
+  /// Order number label
+  ///
+  /// In en, this message translates to:
+  /// **'Order Number'**
+  String get orderNumber;
+
+  /// Estimated delivery label
+  ///
+  /// In en, this message translates to:
+  /// **'Estimated Delivery'**
+  String get estimatedDelivery;
+
+  /// Back to home button
+  ///
+  /// In en, this message translates to:
+  /// **'Back to Home'**
+  String get backToHome;
+
+  /// View order button
+  ///
+  /// In en, this message translates to:
+  /// **'View Order'**
+  String get viewOrder;
 }
 
 class _AppLocalizationsDelegate

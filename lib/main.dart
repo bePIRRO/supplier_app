@@ -24,8 +24,6 @@ class MainApp extends StatelessWidget {
       ],
       supportedLocales: const [Locale('en')],
       home: const MainNavigationScreen(),
-
-      // home: const LoginScreen(), // Use this for login flow
     );
   }
 }

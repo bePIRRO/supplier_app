@@ -319,4 +319,140 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get filterComingSoon => 'Filter functionality coming soon!';
+
+  @override
+  String get myCart => 'My Cart';
+
+  @override
+  String get emptyCart => 'Your cart is empty';
+
+  @override
+  String get emptyCartMessage => 'Add products to your cart to create an order';
+
+  @override
+  String get startShopping => 'Start Shopping';
+
+  @override
+  String get quantity => 'Qty';
+
+  @override
+  String get remove => 'Remove';
+
+  @override
+  String get checkout => 'Checkout';
+
+  @override
+  String get clearCart => 'Clear Cart';
+
+  @override
+  String get confirmClearCart => 'Are you sure you want to clear your cart?';
+
+  @override
+  String get cancel => 'Cancel';
+
+  @override
+  String itemsInCart(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'items',
+      one: 'item',
+    );
+    return '$count $_temp0 in cart';
+  }
+
+  @override
+  String get checkoutTitle => 'Checkout';
+
+  @override
+  String get deliveryInformation => 'Delivery Information';
+
+  @override
+  String get contactInformation => 'Contact Information';
+
+  @override
+  String get deliveryNotes => 'Delivery Notes';
+
+  @override
+  String get paymentMethod => 'Payment Method';
+
+  @override
+  String get address => 'Address';
+
+  @override
+  String get city => 'City';
+
+  @override
+  String get state => 'State';
+
+  @override
+  String get zipCode => 'Zip Code';
+
+  @override
+  String get notes => 'Notes (optional)';
+
+  @override
+  String get placeOrder => 'Place Order';
+
+  @override
+  String get orderSummaryTitle => 'Order Summary';
+
+  @override
+  String get pleaseEnterAddress => 'Please enter delivery address';
+
+  @override
+  String get pleaseEnterCity => 'Please enter city';
+
+  @override
+  String get pleaseEnterState => 'Please enter state';
+
+  @override
+  String get pleaseEnterZipCode => 'Please enter zip code';
+
+  @override
+  String get cashOnDelivery => 'Cash on Delivery';
+
+  @override
+  String get creditCard => 'Credit Card';
+
+  @override
+  String get bankTransfer => 'Bank Transfer';
+
+  @override
+  String get orderPlacedSuccess => 'Order placed successfully!';
+
+  @override
+  String get thankYouForOrder =>
+      'Thank you for your order. We\'ll start processing it shortly.';
+
+  @override
+  String get placeOrderTitle => 'Place Order';
+
+  @override
+  String get confirmOrder => 'Confirm Order';
+
+  @override
+  String get orderConfirmation => 'Order Confirmation';
+
+  @override
+  String get reviewYourOrder =>
+      'Please review your order details before confirming';
+
+  @override
+  String get editOrder => 'Edit Order';
+
+  @override
+  String get processingOrder => 'Processing your order...';
+
+  @override
+  String get orderNumber => 'Order Number';
+
+  @override
+  String get estimatedDelivery => 'Estimated Delivery';
+
+  @override
+  String get backToHome => 'Back to Home';
+
+  @override
+  String get viewOrder => 'View Order';
 }

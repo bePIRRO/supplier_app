@@ -5,6 +5,7 @@ import '../data/navigation_items_data.dart';
 import '../enums/app_screens.dart';
 import 'home_screen.dart';
 import 'orders/orders_screen.dart';
+import 'cart_screen.dart';
 
 /// Main navigation screen that manages bottom navigation
 /// and prevents re-rendering of the bottom nav bar
@@ -78,7 +79,7 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
         children: const [
           _KeepAlivePage(child: HomeScreen()),
           _KeepAlivePage(child: OrdersScreen()),
-          _KeepAlivePage(child: _CartPlaceholder()),
+          _KeepAlivePage(child: CartScreen()),
           _KeepAlivePage(child: _ProfilePlaceholder()),
         ],
         onPageChanged: (index) {
@@ -115,42 +116,6 @@ class _KeepAlivePageState extends State<_KeepAlivePage>
   Widget build(BuildContext context) {
     super.build(context);
     return widget.child;
-  }
-}
-
-/// Placeholder for Cart screen
-class _CartPlaceholder extends StatelessWidget {
-  const _CartPlaceholder();
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: AppColors.background,
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(
-              Icons.shopping_cart_outlined,
-              size: 64,
-              color: AppColors.textSecondary,
-            ),
-            const SizedBox(height: AppSpacing.spaceMd),
-            Text(
-              'Cart Screen',
-              style: AppTypography.h4.copyWith(color: AppColors.textSecondary),
-            ),
-            const SizedBox(height: AppSpacing.spaceSm),
-            Text(
-              'Coming soon',
-              style: AppTypography.bodyMedium.copyWith(
-                color: AppColors.textSecondary,
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
   }
 }
 

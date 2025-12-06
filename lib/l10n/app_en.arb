@@ -515,5 +515,231 @@
   "filterComingSoon": "Filter functionality coming soon!",
   "@filterComingSoon": {
     "description": "Filter coming soon message"
+  },
+
+  "myCart": "My Cart",
+  "@myCart": {
+    "description": "Cart screen title"
+  },
+
+  "emptyCart": "Your cart is empty",
+  "@emptyCart": {
+    "description": "Empty cart message"
+  },
+
+  "emptyCartMessage": "Add products to your cart to create an order",
+  "@emptyCartMessage": {
+    "description": "Empty cart description"
+  },
+
+  "startShopping": "Start Shopping",
+  "@startShopping": {
+    "description": "Start shopping button"
+  },
+
+  "quantity": "Qty",
+  "@quantity": {
+    "description": "Quantity label"
+  },
+
+  "remove": "Remove",
+  "@remove": {
+    "description": "Remove item button"
+  },
+
+  "subtotal": "Subtotal",
+  "@subtotal": {
+    "description": "Subtotal label"
+  },
+
+  "tax": "Tax",
+  "@tax": {
+    "description": "Tax label"
+  },
+
+  "checkout": "Checkout",
+  "@checkout": {
+    "description": "Checkout button"
+  },
+
+  "clearCart": "Clear Cart",
+  "@clearCart": {
+    "description": "Clear cart button"
+  },
+
+  "confirmClearCart": "Are you sure you want to clear your cart?",
+  "@confirmClearCart": {
+    "description": "Clear cart confirmation message"
+  },
+
+  "cancel": "Cancel",
+  "@cancel": {
+    "description": "Cancel button"
+  },
+
+  "itemsInCart": "{count} {count, plural, =1{item} other{items}} in cart",
+  "@itemsInCart": {
+    "description": "Items count in cart",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "3"
+      }
+    }
+  },
+
+  "checkoutTitle": "Checkout",
+  "@checkoutTitle": {
+    "description": "Checkout screen title"
+  },
+
+  "deliveryInformation": "Delivery Information",
+  "@deliveryInformation": {
+    "description": "Delivery information section title"
+  },
+
+  "contactInformation": "Contact Information",
+  "@contactInformation": {
+    "description": "Contact information section title"
+  },
+
+  "deliveryNotes": "Delivery Notes",
+  "@deliveryNotes": {
+    "description": "Delivery notes section title"
+  },
+
+  "paymentMethod": "Payment Method",
+  "@paymentMethod": {
+    "description": "Payment method section title"
+  },
+
+  "address": "Address",
+  "@address": {
+    "description": "Address field label"
+  },
+
+  "city": "City",
+  "@city": {
+    "description": "City field label"
+  },
+
+  "state": "State",
+  "@state": {
+    "description": "State field label"
+  },
+
+  "zipCode": "Zip Code",
+  "@zipCode": {
+    "description": "Zip code field label"
+  },
+
+  "notes": "Notes (optional)",
+  "@notes": {
+    "description": "Notes field label"
+  },
+
+  "placeOrder": "Place Order",
+  "@placeOrder": {
+    "description": "Place order button"
+  },
+
+  "orderSummaryTitle": "Order Summary",
+  "@orderSummaryTitle": {
+    "description": "Order summary section title in checkout"
+  },
+
+  "pleaseEnterAddress": "Please enter delivery address",
+  "@pleaseEnterAddress": {
+    "description": "Address required validation"
+  },
+
+  "pleaseEnterCity": "Please enter city",
+  "@pleaseEnterCity": {
+    "description": "City required validation"
+  },
+
+  "pleaseEnterState": "Please enter state",
+  "@pleaseEnterState": {
+    "description": "State required validation"
+  },
+
+  "pleaseEnterZipCode": "Please enter zip code",
+  "@pleaseEnterZipCode": {
+    "description": "Zip code required validation"
+  },
+
+  "cashOnDelivery": "Cash on Delivery",
+  "@cashOnDelivery": {
+    "description": "Cash on delivery payment option"
+  },
+
+  "creditCard": "Credit Card",
+  "@creditCard": {
+    "description": "Credit card payment option"
+  },
+
+  "bankTransfer": "Bank Transfer",
+  "@bankTransfer": {
+    "description": "Bank transfer payment option"
+  },
+
+  "orderPlacedSuccess": "Order placed successfully!",
+  "@orderPlacedSuccess": {
+    "description": "Order success message"
+  },
+
+  "thankYouForOrder": "Thank you for your order. We'll start processing it shortly.",
+  "@thankYouForOrder": {
+    "description": "Order success description"
+  },
+
+  "placeOrderTitle": "Place Order",
+  "@placeOrderTitle": {
+    "description": "Place order screen title"
+  },
+
+  "confirmOrder": "Confirm Order",
+  "@confirmOrder": {
+    "description": "Confirm order button"
+  },
+
+  "orderConfirmation": "Order Confirmation",
+  "@orderConfirmation": {
+    "description": "Order confirmation section title"
+  },
+
+  "reviewYourOrder": "Please review your order details before confirming",
+  "@reviewYourOrder": {
+    "description": "Review order message"
+  },
+
+  "editOrder": "Edit Order",
+  "@editOrder": {
+    "description": "Edit order button"
+  },
+
+  "processingOrder": "Processing your order...",
+  "@processingOrder": {
+    "description": "Processing order message"
+  },
+
+  "orderNumber": "Order Number",
+  "@orderNumber": {
+    "description": "Order number label"
+  },
+
+  "estimatedDelivery": "Estimated Delivery",
+  "@estimatedDelivery": {
+    "description": "Estimated delivery label"
+  },
+
+  "backToHome": "Back to Home",
+  "@backToHome": {
+    "description": "Back to home button"
+  },
+
+  "viewOrder": "View Order",
+  "@viewOrder": {
+    "description": "View order button"
   }
 }
