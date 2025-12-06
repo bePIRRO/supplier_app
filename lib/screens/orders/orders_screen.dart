@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import '../l10n/app_localizations.dart';
-import '../design/design_system.dart';
-import '../data/orders_data.dart';
-import 'orders/order_detail_screen.dart';
+import '../../l10n/app_localizations.dart';
+import '../../design/design_system.dart';
+import '../../data/orders_data.dart';
+import 'order_detail_screen.dart';
 
 /// Orders screen for the Supplier App
 /// Displays order list with filtering and status tabs

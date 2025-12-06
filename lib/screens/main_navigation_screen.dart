@@ -4,7 +4,7 @@ import '../design/design_system.dart';
 import '../data/navigation_items_data.dart';
 import '../enums/app_screens.dart';
 import 'home_screen.dart';
-import 'orders_screen.dart';
+import 'orders/orders_screen.dart';
 
 /// Main navigation screen that manages bottom navigation
 /// and prevents re-rendering of the bottom nav bar
