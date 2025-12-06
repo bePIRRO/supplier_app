@@ -455,4 +455,67 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get viewOrder => 'View Order';
+
+  @override
+  String get myProfile => 'My Profile';
+
+  @override
+  String get accountSettings => 'Account Settings';
+
+  @override
+  String get editProfile => 'Edit Profile';
+
+  @override
+  String get personalInformation => 'Personal Information';
+
+  @override
+  String get businessInformation => 'Business Information';
+
+  @override
+  String get preferences => 'Preferences';
+
+  @override
+  String get language => 'Language';
+
+  @override
+  String get theme => 'Theme';
+
+  @override
+  String get darkMode => 'Dark Mode';
+
+  @override
+  String get aboutApp => 'About App';
+
+  @override
+  String get version => 'Version';
+
+  @override
+  String get termsOfService => 'Terms of Service';
+
+  @override
+  String get helpCenter => 'Help Center';
+
+  @override
+  String get contactSupport => 'Contact Support';
+
+  @override
+  String get logout => 'Logout';
+
+  @override
+  String get confirmLogout => 'Are you sure you want to logout?';
+
+  @override
+  String get deleteAccount => 'Delete Account';
+
+  @override
+  String get english => 'English';
+
+  @override
+  String get light => 'Light';
+
+  @override
+  String get dark => 'Dark';
+
+  @override
+  String get system => 'System';
 }

@@ -25,12 +25,12 @@ class CheckoutScreen extends StatefulWidget {
 
 class _CheckoutScreenState extends State<CheckoutScreen> {
   final _formKey = GlobalKey<FormState>();
-  final _addressController = TextEditingController();
-  final _cityController = TextEditingController();
-  final _stateController = TextEditingController();
-  final _zipCodeController = TextEditingController();
-  final _phoneController = TextEditingController();
-  final _emailController = TextEditingController();
+  final _addressController = TextEditingController(text: '123 Main Street');
+  final _cityController = TextEditingController(text: 'New York');
+  final _stateController = TextEditingController(text: 'NY');
+  final _zipCodeController = TextEditingController(text: '10001');
+  final _phoneController = TextEditingController(text: '+1 (555) 123-4567');
+  final _emailController = TextEditingController(text: 'supplier@example.com');
   final _notesController = TextEditingController();
 
   String _selectedPaymentMethod = 'cash';

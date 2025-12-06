@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import '../../l10n/app_localizations.dart';
 import '../../design/design_system.dart';
 import '../../models/cart_item.dart';
+import '../../data/orders_data.dart';
+import '../orders/order_detail_screen.dart';
 
 /// Place order screen showing order confirmation and success
 class PlaceOrderScreen extends StatefulWidget {
@@ -482,10 +484,28 @@ class _PlaceOrderScreenState extends State<PlaceOrderScreen> {
   }
 
   void _onViewOrder() {
-    // Navigate to order details
-    // Pop all the way back to cart/home with success result
-    Navigator.of(context).popUntil((route) => route.isFirst);
-    // Could pass order data here if needed
+    // Create OrderData from the current order
+    final orderData = OrderData(
+      orderNumber: _orderNumber,
+      customerName: 'John Supplier', // From profile
+      date: _formatDate(DateTime.now()),
+      itemCount: widget.cartItems.length,
+      total: '\$${widget.total.toStringAsFixed(2)}',
+      status: OrderStatus.processing,
+    );
+
+    // Navigate to order detail screen
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => OrderDetailScreen(order: orderData),
+      ),
+    );
+  }
+
+  String _formatDate(DateTime date) {
+    final months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    return '${months[date.month - 1]} ${date.day}, ${date.year}';
   }
 
   void _onBackToHome() {

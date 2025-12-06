@@ -741,5 +741,110 @@
   "viewOrder": "View Order",
   "@viewOrder": {
     "description": "View order button"
+  },
+
+  "myProfile": "My Profile",
+  "@myProfile": {
+    "description": "Profile screen title"
+  },
+
+  "accountSettings": "Account Settings",
+  "@accountSettings": {
+    "description": "Account settings section title"
+  },
+
+  "editProfile": "Edit Profile",
+  "@editProfile": {
+    "description": "Edit profile button"
+  },
+
+  "personalInformation": "Personal Information",
+  "@personalInformation": {
+    "description": "Personal information section title"
+  },
+
+  "businessInformation": "Business Information",
+  "@businessInformation": {
+    "description": "Business information section title"
+  },
+
+  "preferences": "Preferences",
+  "@preferences": {
+    "description": "Preferences section title"
+  },
+
+  "language": "Language",
+  "@language": {
+    "description": "Language setting"
+  },
+
+  "theme": "Theme",
+  "@theme": {
+    "description": "Theme setting"
+  },
+
+  "darkMode": "Dark Mode",
+  "@darkMode": {
+    "description": "Dark mode setting"
+  },
+
+  "aboutApp": "About App",
+  "@aboutApp": {
+    "description": "About app section title"
+  },
+
+  "version": "Version",
+  "@version": {
+    "description": "App version label"
+  },
+
+  "termsOfService": "Terms of Service",
+  "@termsOfService": {
+    "description": "Terms of service"
+  },
+
+  "helpCenter": "Help Center",
+  "@helpCenter": {
+    "description": "Help center"
+  },
+
+  "contactSupport": "Contact Support",
+  "@contactSupport": {
+    "description": "Contact support"
+  },
+
+  "logout": "Logout",
+  "@logout": {
+    "description": "Logout button"
+  },
+
+  "confirmLogout": "Are you sure you want to logout?",
+  "@confirmLogout": {
+    "description": "Logout confirmation message"
+  },
+
+  "deleteAccount": "Delete Account",
+  "@deleteAccount": {
+    "description": "Delete account option"
+  },
+
+  "english": "English",
+  "@english": {
+    "description": "English language option"
+  },
+
+  "light": "Light",
+  "@light": {
+    "description": "Light theme option"
+  },
+
+  "dark": "Dark",
+  "@dark": {
+    "description": "Dark theme option"
+  },
+
+  "system": "System",
+  "@system": {
+    "description": "System theme option"
   }
 }

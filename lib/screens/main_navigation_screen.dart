@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import '../widgets/bottom_navigation.dart';
-import '../design/design_system.dart';
 import '../data/navigation_items_data.dart';
 import '../enums/app_screens.dart';
 import 'home_screen.dart';
 import 'orders/orders_screen.dart';
 import 'cart_screen.dart';
+import 'profile_screen.dart';
 
 /// Main navigation screen that manages bottom navigation
 /// and prevents re-rendering of the bottom nav bar
@@ -80,7 +80,7 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
           _KeepAlivePage(child: HomeScreen()),
           _KeepAlivePage(child: OrdersScreen()),
           _KeepAlivePage(child: CartScreen()),
-          _KeepAlivePage(child: _ProfilePlaceholder()),
+          _KeepAlivePage(child: ProfileScreen()),
         ],
         onPageChanged: (index) {
           setState(() {
@@ -116,41 +116,5 @@ class _KeepAlivePageState extends State<_KeepAlivePage>
   Widget build(BuildContext context) {
     super.build(context);
     return widget.child;
-  }
-}
-
-/// Placeholder for Profile screen
-class _ProfilePlaceholder extends StatelessWidget {
-  const _ProfilePlaceholder();
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: AppColors.background,
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(
-              Icons.person_outlined,
-              size: 64,
-              color: AppColors.textSecondary,
-            ),
-            const SizedBox(height: AppSpacing.spaceMd),
-            Text(
-              'Profile Screen',
-              style: AppTypography.h4.copyWith(color: AppColors.textSecondary),
-            ),
-            const SizedBox(height: AppSpacing.spaceSm),
-            Text(
-              'Coming soon',
-              style: AppTypography.bodyMedium.copyWith(
-                color: AppColors.textSecondary,
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
   }
 }
