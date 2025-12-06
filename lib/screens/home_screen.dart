@@ -4,8 +4,6 @@ import '../design/design_system.dart';
 import '../widgets/product_card.dart';
 import '../widgets/category_icon.dart';
 import '../widgets/action_button.dart';
-import '../widgets/bottom_navigation.dart';
-import 'orders_screen.dart';
 
 /// Home screen for the Supplier App
 /// Displays featured products, categories, and main actions
@@ -17,7 +15,6 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  int _currentNavIndex = 0;
   String? _selectedCategory;
 
   @override
@@ -51,11 +48,6 @@ class _HomeScreenState extends State<HomeScreen> {
             ],
           ),
         ),
-      ),
-      bottomNavigationBar: AppBottomNavigation(
-        currentIndex: _currentNavIndex,
-        onTap: _onNavItemTapped,
-        items: SupplierNavItems.withBadges(ordersBadge: 3, cartBadge: 2),
       ),
     );
   }
@@ -204,27 +196,6 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  void _onNavItemTapped(int index) {
-    setState(() {
-      _currentNavIndex = index;
-    });
-
-    // TODO: Navigate to different screens based on index
-    switch (index) {
-      case 0: // Home
-        break;
-      case 1: // Orders
-        _navigateToOrders();
-        break;
-      case 2: // Cart
-        _navigateToCart();
-        break;
-      case 3: // Profile
-        _navigateToProfile();
-        break;
-    }
-  }
-
   void _onSearchPressed() {
     // TODO: Implement search functionality
     ScaffoldMessenger.of(context).showSnackBar(
@@ -264,27 +235,6 @@ class _HomeScreenState extends State<HomeScreen> {
     // TODO: Navigate to invoices screen
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(content: Text(AppLocalizations.of(context)!.navigateToInvoices)),
-    );
-  }
-
-  void _navigateToOrders() {
-    Navigator.push(
-      context,
-      MaterialPageRoute(builder: (context) => const OrdersScreen()),
-    );
-  }
-
-  void _navigateToCart() {
-    // TODO: Navigate to cart screen
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text(AppLocalizations.of(context)!.navigateToCart)),
-    );
-  }
-
-  void _navigateToProfile() {
-    // TODO: Navigate to profile screen
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text(AppLocalizations.of(context)!.navigateToProfile)),
     );
   }
 }

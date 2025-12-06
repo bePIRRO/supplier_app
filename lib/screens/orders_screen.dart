@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import '../l10n/app_localizations.dart';
 import '../design/design_system.dart';
-import '../widgets/bottom_navigation.dart';
 import '../data/orders_data.dart';
 import 'orders/order_detail_screen.dart';
 
@@ -16,7 +15,6 @@ class OrdersScreen extends StatefulWidget {
 
 class _OrdersScreenState extends State<OrdersScreen>
     with SingleTickerProviderStateMixin {
-  int _currentNavIndex = 1; // Orders tab
   late TabController _tabController;
   String _searchQuery = '';
 
@@ -81,11 +79,6 @@ class _OrdersScreenState extends State<OrdersScreen>
             ),
           ),
         ],
-      ),
-      bottomNavigationBar: AppBottomNavigation(
-        currentIndex: _currentNavIndex,
-        onTap: _onNavItemTapped,
-        items: SupplierNavItems.withBadges(ordersBadge: 3, cartBadge: 2),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _onCreateOrder,
@@ -190,27 +183,6 @@ class _OrdersScreenState extends State<OrdersScreen>
     return orders;
   }
 
-  void _onNavItemTapped(int index) {
-    setState(() {
-      _currentNavIndex = index;
-    });
-
-    // Navigate to different screens based on index
-    switch (index) {
-      case 0: // Home
-        Navigator.pop(context);
-        break;
-      case 1: // Orders - already here
-        break;
-      case 2: // Cart
-        _navigateToCart();
-        break;
-      case 3: // Profile
-        _navigateToProfile();
-        break;
-    }
-  }
-
   void _onFilterPressed() {
     final l10n = AppLocalizations.of(context)!;
     ScaffoldMessenger.of(
@@ -230,20 +202,6 @@ class _OrdersScreenState extends State<OrdersScreen>
       context,
       MaterialPageRoute(builder: (context) => OrderDetailScreen(order: order)),
     );
-  }
-
-  void _navigateToCart() {
-    final l10n = AppLocalizations.of(context)!;
-    ScaffoldMessenger.of(
-      context,
-    ).showSnackBar(SnackBar(content: Text(l10n.navigateToCart)));
-  }
-
-  void _navigateToProfile() {
-    final l10n = AppLocalizations.of(context)!;
-    ScaffoldMessenger.of(
-      context,
-    ).showSnackBar(SnackBar(content: Text(l10n.navigateToProfile)));
   }
 }
 
